@@ -18,5 +18,5 @@ Route::get('/', function()
 
 Route::get('users', function()
 {
-    return 'Users!';
+    return 'You are looking for users.  One moment, please...';
 });
