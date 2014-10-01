@@ -20,3 +20,29 @@ Route::get('users', function()
 {
     return 'You are looking for users.  One moment, please...';
 });
+
+Route::get('timezone', function()
+{
+    return Config::Get('app.timezone');
+});
+
+Route::get('environment', function()
+{
+    return App::environment();
+});
+
+Route::get('mandatory-param/{val?}', function($val)
+{
+    return $val;
+});
+
+Route::get('optional-param/{val?}', function($val='stuff')
+{
+    return $val;
+});
+
+Route::get('multiParams/{id}/{name}', function($id,$name) {
+	return 'ID: ' . $id . '<br />' .
+		'Name: ' . $name;
+})
+->where(array('id' => '[0-9]+', 'name' => '[A-Za-z]+'));
